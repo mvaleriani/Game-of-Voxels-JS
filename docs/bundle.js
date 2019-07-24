@@ -314,24 +314,6 @@ var cardsInfo = [{
     desc2: 'Press Space to Pause/Play',
     desc3: 'Press R to randomize the grid'
 }];
-var arrowSVG = _react2.default.createElement(
-    'svg',
-    { width: '45', height: '45', viewBox: '0 0 192 192', fill: 'none', xmlns: 'http://www.w3.org/2000/svg' },
-    _react2.default.createElement(
-        'g',
-        { clipPath: 'url(#clip0)' },
-        _react2.default.createElement('path', { d: 'M12.6561 107.997L12.7169 108.055L12.7794 108.111L95.6325 182.712C101.036 187.578 109.36 187.141 114.225 181.738C119.09 176.335 118.654 168.011 113.251 163.146L38.912 96.2108L113.251 29.276C118.654 24.4109 119.09 16.0867 114.225 10.6835C109.36 5.28022 101.036 4.84398 95.6326 9.70908L12.7795 84.3103L12.5993 84.4726L12.4341 84.6501C9.58736 87.708 6.60356 91.4561 6.46328 96.0866C6.31515 100.976 9.32538 104.808 12.6561 107.997Z', fill: 'white', stroke: '#545454', strokeWidth: '11' })
-    ),
-    _react2.default.createElement(
-        'defs',
-        null,
-        _react2.default.createElement(
-            'clipPath',
-            { id: 'clip0' },
-            _react2.default.createElement('rect', { width: '192', height: '192', fill: 'white', transform: 'translate(192 192) rotate(-180)' })
-        )
-    )
-);
 
 function addStyletoCards() {
     var styles = {
@@ -715,6 +697,12 @@ var Modal = function (_React$Component2) {
         value: function render() {
             var _this3 = this;
 
+            var arrowSVG = _react2.default.createElement(
+                'svg',
+                { width: '35', height: '35', viewBox: '0 0 176 176', fill: 'none', xmlns: 'http://www.w3.org/2000/svg' },
+                _react2.default.createElement('path', { fillRule: 'evenodd', clipRule: 'evenodd', d: 'M88 176C136.601 176 176 136.601 176 88C176 39.3989 136.601 0 88 0C39.3989 0 0 39.3989 0 88C0 136.601 39.3989 176 88 176ZM71.6213 124.936L118.693 92.9633C122.198 90.5826 122.198 85.4174 118.693 83.0367L71.6213 51.064C67.6376 48.3582 62.25 51.2116 62.25 56.0274V119.973C62.25 124.788 67.6376 127.642 71.6213 124.936Z', fill: titleColor })
+            );
+
             if (this.state.opened) {
                 return _react2.default.createElement(
                     'div',
@@ -722,18 +710,18 @@ var Modal = function (_React$Component2) {
                             e.preventDefault();
                         } },
                     _react2.default.createElement(
+                        'svg',
+                        { width: '40', height: '40', viewBox: '0 0 192 192', fill: 'none', id: 'xSVG', onClick: function onClick(e) {
+                                return _this3.toggleModal('head');
+                            }, xmlns: 'http://www.w3.org/2000/svg' },
+                        _react2.default.createElement('path', { d: 'M47.8596 164.118L95.5893 116.388L143.319 164.118C148.201 169 156.115 169 160.997 164.118L163.118 161.997C168 157.115 168 149.201 163.118 144.319L115.388 96.5893L163.118 48.8596C168 43.9781 168 36.0635 163.118 31.182L160.997 29.0606C156.115 24.1791 148.201 24.1791 143.319 29.0606L95.5893 76.7904L47.8596 29.0606C42.9781 24.1791 35.0635 24.1791 30.182 29.0606L28.0606 31.182C23.1791 36.0635 23.1791 43.9781 28.0606 48.8596L75.7904 96.5893L28.0606 144.319C23.1791 149.201 23.1791 157.115 28.0606 161.997L30.182 164.118C35.0635 169 42.9781 169 47.8596 164.118Z', fill: 'white' })
+                    ),
+                    _react2.default.createElement(
                         'div',
                         { id: 'card-stack', style: this.state.display },
-                        _react2.default.createElement(
-                            'svg',
-                            { width: '40', height: '40', viewBox: '0 0 192 192', fill: 'none', id: 'xSVG', onClick: function onClick(e) {
-                                    return _this3.toggleModal('head');
-                                }, xmlns: 'http://www.w3.org/2000/svg' },
-                            _react2.default.createElement('path', { d: 'M47.8596 164.118L95.5893 116.388L143.319 164.118C148.201 169 156.115 169 160.997 164.118L163.118 161.997C168 157.115 168 149.201 163.118 144.319L115.388 96.5893L163.118 48.8596C168 43.9781 168 36.0635 163.118 31.182L160.997 29.0606C156.115 24.1791 148.201 24.1791 143.319 29.0606L95.5893 76.7904L47.8596 29.0606C42.9781 24.1791 35.0635 24.1791 30.182 29.0606L28.0606 31.182C23.1791 36.0635 23.1791 43.9781 28.0606 48.8596L75.7904 96.5893L28.0606 144.319C23.1791 149.201 23.1791 157.115 28.0606 161.997L30.182 164.118C35.0635 169 42.9781 169 47.8596 164.118Z', fill: 'white', stroke: '#545454', strokeWidth: '11' })
-                        ),
                         this.state.currCard !== 0 && _react2.default.createElement(
                             'div',
-                            { style: { position: 'absolute', left: '10px', bottom: 'calc(50% - 22px)', zIndex: 2 }, onClick: function onClick(e) {
+                            { style: { position: 'absolute', left: '10px', bottom: 'calc(50% - 22px)', zIndex: 2, transform: 'scaleX(-1)' }, onClick: function onClick(e) {
                                     return _this3.handleCardIter(e, -1);
                                 }, onDoubleClick: function onDoubleClick(e) {
                                     e.stopPropagation();
@@ -745,7 +733,7 @@ var Modal = function (_React$Component2) {
                             card: cardsInfo[this.state.currCard] }),
                         this.state.currCard < cardsInfo.length - 1 && _react2.default.createElement(
                             'div',
-                            { style: { position: 'absolute', right: '10px', bottom: 'calc(50% - 22px)', zIndex: 2, transform: 'scaleX(-1)' }, onClick: function onClick(e) {
+                            { style: { position: 'absolute', right: '10px', bottom: 'calc(50% - 22px)', zIndex: 2 }, onClick: function onClick(e) {
                                     return _this3.handleCardIter(e, 1);
                                 } },
                             arrowSVG
@@ -1213,6 +1201,7 @@ var Navbar = function (_React$Component3) {
                             display: 'flex',
                             color: '#e0e0e0',
                             fontSize: '22px',
+                            zIndex: 100,
                             borderBottom: '2px solid #A3A3A3',
                             borderRight: '2px solid #A3A3A3',
                             transition: 'width .2s',
